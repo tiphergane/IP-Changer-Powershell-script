@@ -1,6 +1,6 @@
-﻿######################################################################
+######################################################################
 # Script pour Changer l'IP si l'on doit travailler avec BTS Site Manager
-# version 1.0
+# version 1.1
 # Auteur: Jeremy VERGNAUD
 # Synopsis: Automatisation du changement d'IP et du lancement de BTS Site Manager et du retour en IP Dynamique
 # Usage: Changer le nom de la carte réseau qui est après la variable $INTERFACE si votre carte à un autre nom. Juste lancer le script en mode 
@@ -46,7 +46,6 @@ else
  
 # Votre Code ci-dessous
 
-
 # Importe le module NetTCPIP
 Import-Module NetTCPIP
 
@@ -60,7 +59,7 @@ $MASK="24"
 $INTERFACE="Ethernet"
 
 #Check si l'interface est configurée pour BTS Site Manager
-Get-NetIPConfiguration | .\findstr.exe 192.168.255.130 | Out-Null
+Get-NetIPConfiguration | findstr 192.168.255.130 | Out-Null
 
 if ($LASTEXITCODE -eq 0)
 {
@@ -77,5 +76,5 @@ else
     Get-NetIPConfiguration $INTERFACE
     #Une fois la configuration faite, pour ne pas perdre de temps nous lançons BTS Site Manager
     Echo "Lancement de BTS Site Manager"
-    Start-Process "%ProgramFiles(x86)%\Nokia Siemens Networks\Managers\BTS Site\BTS Site Manager\BTSSiteManager.bat"
+    Start-Process "c:\Program Files (x86)\Nokia Siemens Networks\Managers\BTS Site\BTS Site Manager\BTSSiteManager.bat"
 }

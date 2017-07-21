@@ -1,7 +1,7 @@
 ######################################################################
 # Script pour Changer l'IP si l'on doit travailler avec BTS Site Manager
 # version 1.1
-# Auteur: Jeremy VERGNAUD
+# Auteur: tiphergane / Meoowrwa
 # Synopsis: Automatisation du changement d'IP et du lancement de BTS Site Manager et du retour en IP Dynamique
 # Usage: Changer le nom de la carte réseau qui est après la variable $INTERFACE si votre carte à un autre nom. Juste lancer le script en mode 
 # Administrateur afin de pouvoir changer les configurations.

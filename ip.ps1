@@ -59,7 +59,7 @@ $MASK="24"
 $INTERFACE="Ethernet"
 
 #Check si l'interface est configurée pour BTS Site Manager
-Get-NetIPConfiguration | findstr 192.168.255.130 | Out-Null
+Get-NetIPConfiguration | findstr $IP | Out-Null
 
 if ($LASTEXITCODE -eq 0)
 {
